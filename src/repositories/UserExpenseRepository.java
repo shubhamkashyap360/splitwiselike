@@ -16,11 +16,14 @@ public class UserExpenseRepository {
         this.userExpenses = userExpenses;
     }
     public List<UserExpense> findUserExpenseByExpense(String desc){
+        List<UserExpense> userExpenseList = new ArrayList<>();
         for(UserExpense userExpense : userExpenses){
             if(desc.equals(userExpense.getExpense().getDescription())){
+                userExpenseList.add(userExpense);
 
             }
         }
+        return userExpenseList;
 
     }
 }
